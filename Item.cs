@@ -7,17 +7,30 @@ namespace RPG_characters
         #region Variables
         protected string itemName;
         protected int itemLevel;
-        protected Slot itemSlot1;
+        protected Slot itemSlot;
         #endregion
 
         #region Properties
         public string ItemName { get { return itemName; } }
         public int ItemLevel { get { return itemLevel; } }
-        public Slot ItemSlot { get => itemSlot1; set => itemSlot1 = value; }
+        public Slot ItemSlot { get => itemSlot; set => itemSlot = value; }
         #endregion
 
-        #region Constructors
-        //constructor here
+        #region Constructor
+        public Item()
+        {
+            // default item values
+            itemLevel = 1;
+            itemName = "Not named";
+            itemSlot = Slot.SLOT_HEAD;
+        }
+        public Item(string name, int level, Slot slot)
+        {
+            itemLevel = level;
+            itemName = name;
+            itemSlot = slot;
+        }
+
         #endregion
 
         #region Methods
