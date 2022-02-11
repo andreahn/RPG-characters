@@ -11,6 +11,7 @@ namespace RPG_characters
         protected ArmourType[] compatibleArmour;
         protected WeaponType[] compatibleWeapons;
         protected string name;
+        protected int level;
         protected PrimaryAttributes attributes;
         protected PrimaryAttributes levelUpAttributeValues;
         protected Dictionary<Slot, Item> equipped = new Dictionary<Slot, Item>()
@@ -30,6 +31,8 @@ namespace RPG_characters
         public PrimaryAttributes LevelUpAttributeValues { get => levelUpAttributeValues; }
         public Dictionary<Slot, Item> Equipped { get => equipped; }
 
+        public int Level { get => level; }
+
 
         #endregion
 
@@ -39,11 +42,12 @@ namespace RPG_characters
 
         #region Methods
         /// <summary>
-        /// Levels up the character with its type's respective level up values
+        /// Increases level of character, and updates attributes with its type's level up values.
         /// </summary>
         public void LevelUp()
         {
             attributes += levelUpAttributeValues;
+            level++;
         }
 
         /// <summary>
