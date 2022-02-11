@@ -7,20 +7,39 @@ namespace RPG_characters
 
         #region Variables
         private WeaponType itemType;
-        private WeaponAttributes attributes;
+        private WeaponAttributes weaponAttributes;
         #endregion
 
         #region Properties
         public WeaponType ItemType { get => itemType; }
-        public WeaponAttributes Attributes { get => attributes; }
+        public WeaponAttributes WeaponAttributes { get => weaponAttributes; }
         #endregion
 
-        #region Constructors
-        //constructor here
+        #region Constructor
+        public Weapon() : base()
+        {
+            // default values
+            itemType = WeaponType.WEAPON_STAFF;
+            weaponAttributes = new WeaponAttributes();
+        }
+        public Weapon(string name, int level, Slot slot, WeaponType type) : base(name, level, slot)
+        {
+            itemType = type;
+            weaponAttributes = new WeaponAttributes();
+        }
+
+        public Weapon(string name, int level, Slot slot, WeaponType type, WeaponAttributes attributes) : base(name, level, slot)
+        {
+            itemType = type;
+            weaponAttributes = attributes;
+        }
         #endregion
 
         #region Methods
-        //methods here
+        public double DamagePerSecond()
+        {
+            return weaponAttributes.AttackSpeed * weaponAttributes.Damage;
+        }
         #endregion
     }
 }
