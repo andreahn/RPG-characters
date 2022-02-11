@@ -7,12 +7,12 @@ namespace RPG_characters
 
         #region Variables
         private WeaponType itemType;
-        //todo: armour attributes
+        private WeaponAttributes attributes;
         #endregion
 
         #region Properties
         public WeaponType ItemType { get => itemType; }
-        // todo: armour attributes
+        public WeaponAttributes Attributes { get => attributes; }
         #endregion
 
         #region Constructors
