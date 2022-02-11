@@ -16,7 +16,23 @@ namespace RPG_characters
         #endregion
 
         #region Constructors
-        //constructor here
+        public Armour() : base()
+        {
+            itemType = ArmourType.ARMOUR_CLOTH;
+            armourAttributes = new PrimaryAttributes();
+        }
+
+        public Armour(string name, int level, Slot slot, ArmourType type) : base(name, level, slot)
+        {
+            itemType = type;
+            armourAttributes = new PrimaryAttributes();
+        }
+
+        public Armour(string name, int level, Slot slot, ArmourType type, PrimaryAttributes attributes) : base(name, level, slot)
+        {
+            itemType = type;
+            armourAttributes = attributes;
+        }
         #endregion
 
         #region Methods
