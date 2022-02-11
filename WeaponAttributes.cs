@@ -9,8 +9,8 @@ namespace RPG_characters
     class WeaponAttributes
     {
         #region Variables
-        private int damage;
-        private double attackSpeed;
+        private int damage = 1;
+        private double attackSpeed = 1.0;
         #endregion
 
         #region Properties
@@ -19,11 +19,27 @@ namespace RPG_characters
         #endregion
 
         #region Constructors
-        //constructor here
-        #endregion
 
-        #region Methods
-        //methods here
+        public WeaponAttributes()
+        {
+
+        }
+
+        public WeaponAttributes(int damage)
+        {
+            this.damage = damage;
+        }
+
+        public WeaponAttributes(double speed)
+        {
+            attackSpeed = speed;
+        }
+
+        public WeaponAttributes(int damage, double speed)
+        {
+            this.damage = damage;
+            attackSpeed = speed;
+        }
         #endregion
     }
 }
