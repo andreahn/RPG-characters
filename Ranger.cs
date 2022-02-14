@@ -8,12 +8,17 @@ namespace RPG_characters
 {
     internal class Ranger : Character
     {
-        public Ranger()
+        public Ranger(string characterName, int level) : base(characterName, level)
         {
             compatibleArmour = new ArmourType[] { ArmourType.ARMOUR_LEATHER, ArmourType.ARMOUR_MAIL };
             compatibleWeapons = new WeaponType[] { WeaponType.WEAPON_BOW };
             levelUpAttributeValues = new PrimaryAttributes() { Dexterity = 5, Intelligence = 1, Strength =  1};
             attributes = new PrimaryAttributes() { Dexterity = 7, Intelligence = 1, Strength = 1 };
+
+            if (level > 1)
+            {
+                attributes += levelUpAttributeValues * (level - 1);
+            }
         }
         //public override void characterType()
         //{
