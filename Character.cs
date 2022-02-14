@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace RPG_characters
 {
@@ -106,12 +107,35 @@ namespace RPG_characters
         /// </summary>
         public void Stats()
         {
-            Console.WriteLine($"Strength: {this.attributes.Strength}");
-            Console.WriteLine($"Intelligence: {this.attributes.Intelligence}");
-            Console.WriteLine($"Dexterity: {this.attributes.Dexterity}");
+            int totalStrength = this.attributes.Strength;
+            int totalIntelligence = this.attributes.Intelligence;
+            int totalDexterity = this.attributes.Dexterity;
+
+            foreach (var item in equipped.Select(x => x.Value).OfType<Armour>())
+            {
+                totalStrength += item.ArmourAttributes.Strength;
+                totalIntelligence += item.ArmourAttributes.Intelligence;
+                totalDexterity += item.ArmourAttributes.Dexterity;
+            }
+
+            StringBuilder stats = new StringBuilder("", 200);
+            stats.AppendFormat("----STATS----{0}", Environment.NewLine);
+            stats.AppendFormat("Name: {0} (level: {1}){2}", this.name, this.level, Environment.NewLine);
+            stats.AppendFormat("Strength: {0}{1}", totalStrength, Environment.NewLine);
+            stats.AppendFormat("Intelligence: {0}{1}", totalIntelligence, Environment.NewLine);
+            stats.AppendFormat("Dexterity: {0}{1}", totalDexterity, Environment.NewLine);
+            stats.AppendFormat("Damage per second: {0}", this.DamagePerSecond());
+            Console.WriteLine(stats);
         }
 
-        //public abstract void damagePerSecond();
+        public double DamagePerSecond()
+        {
+            //double damagePerSecond = equipped.OfType<Weapon>()).DamagePerSecond();
+            double damagePerSecond = 0.0;
+
+
+            return damagePerSecond;
+        }
 
         #endregion
     }
