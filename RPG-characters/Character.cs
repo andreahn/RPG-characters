@@ -16,13 +16,7 @@ namespace RPG_characters
         protected int level;
         protected PrimaryAttributes attributes;
         protected PrimaryAttributes levelUpAttributeValues;
-        protected Dictionary<Slot, Item> equipped = new Dictionary<Slot, Item>()
-        {
-            { Slot.SLOT_HEAD, new Armour() },
-            { Slot.SLOT_BODY, new Armour() },
-            { Slot.SLOT_LEGS, new Armour() },
-            { Slot.SLOT_WEAPON, new Weapon() }
-        };
+        protected Dictionary<Slot, Item> equipped = new Dictionary<Slot, Item>();
         #endregion
 
         #region Properties
@@ -39,10 +33,10 @@ namespace RPG_characters
         #endregion
 
         #region Constructors
-        public Character(string characterName, int level)
+        public Character(string characterName)
         {
             this.name = characterName;
-            this.level = level;
+            level = 1;
         }
         #endregion
 

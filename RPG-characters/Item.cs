@@ -17,13 +17,6 @@ namespace RPG_characters
         #endregion
 
         #region Constructor
-        public Item()
-        {
-            // default item values
-            itemLevel = 1;
-            itemName = "Not named";
-            itemSlot = Slot.SLOT_HEAD;
-        }
         public Item(string name, int level, Slot slot)
         {
             itemLevel = level;
