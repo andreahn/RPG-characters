@@ -27,6 +27,14 @@ namespace RPG_characters
             return Attributes;
         }
 
+        public static PrimaryAttributes operator* (PrimaryAttributes Attributes, int level)
+        {
+            Attributes.Strength *= level;
+            Attributes.Dexterity *= level;
+            Attributes.Intelligence *= level;
+            return Attributes;
+        }
+
 
     }
 }
