@@ -124,16 +124,14 @@ namespace RPG_characters
             stats.AppendFormat("Strength: {0}{1}", totalStrength, Environment.NewLine);
             stats.AppendFormat("Intelligence: {0}{1}", totalIntelligence, Environment.NewLine);
             stats.AppendFormat("Dexterity: {0}{1}", totalDexterity, Environment.NewLine);
-            stats.AppendFormat("Damage per second: {0}", this.DamagePerSecond());
+            stats.AppendFormat("Damage per second: {0}", this.CharacterDamage());
             Console.WriteLine(stats);
         }
 
-        public double DamagePerSecond()
+        public double CharacterDamage()
         {
-            //double damagePerSecond = equipped.AsType<Weapon>().DamagePerSecond();
-            double damagePerSecond = 0.0;
-
-
+            var currentWeapon = equipped.Values.OfType<Weapon>().SingleOrDefault();
+            double damagePerSecond = currentWeapon.DamagePerSecond() * (1 + TotalAttributes()/100);
             return damagePerSecond;
         }
 
