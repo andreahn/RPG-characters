@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG_characters.Custom_Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,14 +62,21 @@ namespace RPG_characters
         /// <param name="ItemToBeEquipped">Armour object to be equipped</param>
         public void EquipItem(Armour ItemToBeEquipped)
         {
-            // CHECK LEVEL
-            if (ItemToBeEquipped.ItemSlot == Slot.SLOT_WEAPON || !(compatibleArmour.Contains(ItemToBeEquipped.ItemType)))
+            if (ItemToBeEquipped.ItemSlot == Slot.SLOT_WEAPON)
             {
-                // throw exception
-                Console.WriteLine("can't do that");
-                return;
+                throw new InvalidArmorException("Armour cannot be equipped in weapon slot.");
             }
-            Console.WriteLine("can do that");
+            else if (!(compatibleArmour.Contains(ItemToBeEquipped.ItemType))){
+                throw new InvalidArmorException("This character type cannot equip this type of armour.");
+            }
+            else if (ItemToBeEquipped.ItemLevel > level)
+            {
+                throw new InvalidArmorException("Character level isn't high enough for this armour.");
+            }
+            else
+            {
+                equipped[ItemToBeEquipped.ItemSlot] = ItemToBeEquipped;
+            }
         }
 
         /// <summary>
@@ -77,14 +85,22 @@ namespace RPG_characters
         /// <param name="ItemToBeEquipped">Weapon object to be equipped</param>
         public void EquipItem(Weapon ItemToBeEquipped)
         {
-            // CHECK LEVEL
-            if (ItemToBeEquipped.ItemSlot != Slot.SLOT_WEAPON || !(compatibleWeapons.Contains(ItemToBeEquipped.ItemType)))
+            if (ItemToBeEquipped.ItemSlot != Slot.SLOT_WEAPON)
             {
-                // throw exception
-                Console.WriteLine("can't do that");
-                return;
+                throw new InvalidWeaponException("Weapon cannot be equipped in armour slot.");
             }
-            Console.WriteLine("can do that");
+            else if (!(compatibleWeapons.Contains(ItemToBeEquipped.ItemType)))
+            {
+                throw new InvalidWeaponException("This character type cannot equip this type of weapon.");
+            }
+            else if (ItemToBeEquipped.ItemLevel > level)
+            {
+                throw new InvalidWeaponException("Character level isn't high enough for this weapon.");
+            }
+            else
+            {
+                equipped[ItemToBeEquipped.ItemSlot] = ItemToBeEquipped;
+            }
         }
 
         /// <summary>
