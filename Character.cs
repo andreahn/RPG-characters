@@ -37,7 +37,11 @@ namespace RPG_characters
         #endregion
 
         #region Constructors
-        // constructors go here
+        public Character(string characterName, int level)
+        {
+            this.name = characterName;
+            this.level = level;
+        }
         #endregion
 
         #region Methods
@@ -56,6 +60,7 @@ namespace RPG_characters
         /// <param name="ItemToBeEquipped">Armour object to be equipped</param>
         public void EquipItem(Armour ItemToBeEquipped)
         {
+            // CHECK LEVEL
             if (ItemToBeEquipped.ItemSlot == Slot.SLOT_WEAPON || !(compatibleArmour.Contains(ItemToBeEquipped.ItemType)))
             {
                 // throw exception
@@ -71,6 +76,7 @@ namespace RPG_characters
         /// <param name="ItemToBeEquipped">Weapon object to be equipped</param>
         public void EquipItem(Weapon ItemToBeEquipped)
         {
+            // CHECK LEVEL
             if (ItemToBeEquipped.ItemSlot != Slot.SLOT_WEAPON || !(compatibleWeapons.Contains(ItemToBeEquipped.ItemType)))
             {
                 // throw exception
