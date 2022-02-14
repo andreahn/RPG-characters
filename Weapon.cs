@@ -2,7 +2,7 @@
 
 namespace RPG_characters
 {
-    class Weapon : Item
+    public class Weapon : Item
     {
 
         #region Variables

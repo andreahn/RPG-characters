@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG_characters
 {
-    internal class Ranger : Character
+    public class Ranger : Character
     {
         public Ranger(string characterName, int level) : base(characterName, level)
         {

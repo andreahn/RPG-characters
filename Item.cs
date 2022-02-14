@@ -2,7 +2,7 @@
 
 namespace RPG_characters
 {
-    abstract class Item
+    public abstract class Item
     {
         #region Variables
         protected string itemName;

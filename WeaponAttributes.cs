@@ -6,23 +6,25 @@ using System.Threading.Tasks;
 
 namespace RPG_characters
 {
-    class WeaponAttributes
+    public class WeaponAttributes
     {
         #region Variables
-        private int damage = 1;
-        private double attackSpeed = 1.0;
+        private int damage;
+        private double attackSpeed;
         #endregion
 
         #region Properties
-        public int Damage { get => damage; }
-        public double AttackSpeed { get => attackSpeed; }
+        public int Damage { get => damage; set => damage = value; }
+        public double AttackSpeed { get => attackSpeed; set => attackSpeed = value; }
+    
         #endregion
 
         #region Constructors
 
         public WeaponAttributes()
         {
-
+        damage = 1;
+        attackSpeed = 1.0;
         }
 
         public WeaponAttributes(int damage)

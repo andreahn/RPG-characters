@@ -2,7 +2,7 @@
 
 namespace RPG_characters
 {
-    class Mage : Character
+    public class Mage : Character
     {
         public Mage(string characterName, int level) : base(characterName, level)
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RPG_characters
 {
-    enum Slot
+    public enum Slot
     {
         SLOT_HEAD,
         SLOT_BODY,
@@ -11,7 +11,7 @@ namespace RPG_characters
         SLOT_WEAPON
     }
 
-    enum WeaponType
+    public enum WeaponType
     {
         WEAPON_AXE,
         WEAPON_BOW,
@@ -22,7 +22,7 @@ namespace RPG_characters
         WEAPON_WAND
     }
 
-    enum ArmourType
+    public enum ArmourType
     {
         ARMOUR_CLOTH,
         ARMOUR_LEATHER,
@@ -32,10 +32,9 @@ namespace RPG_characters
 
     class Program
     {
-        
+
         static void Main(string[] args)
         {
-            
         }
     }
 }

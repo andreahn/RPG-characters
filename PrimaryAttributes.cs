@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPG_characters
 {
-    class PrimaryAttributes
+    public class PrimaryAttributes
     {
 
         #region Variables

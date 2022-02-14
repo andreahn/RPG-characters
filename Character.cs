@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RPG_characters
 {
-    abstract class Character
+    public abstract class Character
     {
         #region Variables
         // variables go here
@@ -130,7 +130,7 @@ namespace RPG_characters
 
         public double DamagePerSecond()
         {
-            //double damagePerSecond = equipped.OfType<Weapon>()).DamagePerSecond();
+            //double damagePerSecond = equipped.AsType<Weapon>().DamagePerSecond();
             double damagePerSecond = 0.0;
 
 
