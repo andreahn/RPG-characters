@@ -8,9 +8,20 @@ namespace RPG_characters
 {
     class PrimaryAttributes
     {
-        public int Strength { get; set; }
-        public int Dexterity { get; set; }
-        public int Intelligence { get; set; }
+
+        #region Variables
+        private int strength;
+        private int dexterity;
+        private int intelligence;
+        #endregion
+
+        #region Properties
+        public int Strength { get => strength; set => strength = value; }
+        public int Dexterity { get => dexterity; set => dexterity = value; }
+        public int Intelligence { get => intelligence; set => intelligence = value; }
+        #endregion
+
+        #region Constructors
 
         public PrimaryAttributes()
         {
@@ -19,6 +30,17 @@ namespace RPG_characters
             Intelligence = 0;
         }
 
+        public PrimaryAttributes(int strength, int dexterity, int intelligence)
+        {
+            Strength = strength;
+            Dexterity = dexterity;
+            Intelligence = intelligence;
+        }
+
+        #endregion
+
+
+        #region Methods
         public static PrimaryAttributes operator+ (PrimaryAttributes Attributes, PrimaryAttributes AttributeUpdateValues)
         {
             Attributes.Strength += AttributeUpdateValues.Strength;
@@ -34,7 +56,6 @@ namespace RPG_characters
             Attributes.Intelligence *= level;
             return Attributes;
         }
-
-
+        #endregion
     }
 }
