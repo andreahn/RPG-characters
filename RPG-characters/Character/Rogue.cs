@@ -18,6 +18,9 @@ namespace RPG_characters
 
         public override int TotalAttributes()
         {
+            // Each point of dexterity increases Rogues damage by 1%
+            // Therefore, only take dexterity attributes from character and armour
+
             int totalAttributes = this.attributes.Dexterity;
             foreach (var armour in equipped.Select(x => x.Value).OfType<Armour>())
             {

@@ -110,6 +110,7 @@ namespace RPG_characters
         /// </summary>
         public void Stats()
         {
+            // Attribute statistics is the total of character and armour bonus
             int totalStrength = this.attributes.Strength;
             int totalIntelligence = this.attributes.Intelligence;
             int totalDexterity = this.attributes.Dexterity;
@@ -137,6 +138,8 @@ namespace RPG_characters
         /// <returns>Character damage</returns>
         public double CharacterDamage()
         {
+            // Based on Character damage = Weapon DPS * (1 + TotalPrimaryAttribute/100)
+
             var currentWeapon = equipped.Values.OfType<Weapon>().SingleOrDefault();
             double characterDamage = 1 + TotalAttributes()/100;
 

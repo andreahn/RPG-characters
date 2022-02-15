@@ -15,6 +15,9 @@ namespace RPG_characters
         
         public override int TotalAttributes()
         {
+            // Each point of intelligence increases Mages damage by 1%
+            // Therefore, only take intelligence attributes from character and armour
+
             int totalAttributes = this.attributes.Intelligence;
             foreach (var armour in equipped.Select(x => x.Value).OfType<Armour>())
             {

@@ -17,6 +17,9 @@ namespace RPG_characters
         }
         public override int TotalAttributes()
         {
+            // Each point of strength increases Warriors damage by 1%
+            // Therefore, only take strength attributes from character and armour
+
             int totalAttributes = this.attributes.Strength;
             foreach (var armour in equipped.Select(x => x.Value).OfType<Armour>())
             {
