@@ -25,6 +25,10 @@ namespace RPG_characters
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Calculates the weapon's DPS
+        /// </summary>
+        /// <returns>Weapon's damage per second</returns>
         public double DamagePerSecond()
         {
             return weaponAttributes.AttackSpeed * weaponAttributes.Damage;
