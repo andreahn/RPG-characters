@@ -6,6 +6,7 @@ namespace RPG_charactersTests
 {
     public class CharacterTests
     {
+        #region Basic character tests
         [Fact]
         public void Character_OnCreation_IsLevelOne()
         {
@@ -35,6 +36,9 @@ namespace RPG_charactersTests
             Assert.Equal(expected, actual);
         }
 
+        #endregion
+
+        #region Check if child classes have default attributes tests
         [Fact]
         public void Mage_OnCreation_HasDefaultAttributes()
         {
@@ -106,6 +110,10 @@ namespace RPG_charactersTests
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        #endregion
+
+        #region Check if child classes have expected attributes on level up tests
 
         [Fact]
         public void Mage_OnLevelUp_HasExpectedAttributes()
@@ -182,5 +190,7 @@ namespace RPG_charactersTests
             // Assert
             Assert.Equal(expected, actual);
         }
+
+        #endregion
     }
 }
