@@ -100,7 +100,7 @@ namespace RPG_characters
         }
 
         /// <summary>
-        /// Calculates the total of attributes of the character and equipped armour
+        /// Calculates the attributes total of the character and equipped armour
         /// </summary>
         /// <returns>Sum of attribute values</returns>
         public int TotalAttributes()
@@ -140,16 +140,19 @@ namespace RPG_characters
             Console.WriteLine(stats);
         }
 
+        /// <summary>
+        /// Calculates total character damage (based on total attributes and weapon attributes)
+        /// </summary>
+        /// <returns>Character damage</returns>
         public double CharacterDamage()
         {
             var currentWeapon = equipped.Values.OfType<Weapon>().SingleOrDefault();
-            double damagePerSecond = 1 + TotalAttributes()/100;
+            double characterDamage = 1 + TotalAttributes()/100;
 
             if (currentWeapon != null)
-                damagePerSecond *= currentWeapon.DamagePerSecond();
-            return damagePerSecond;
+                characterDamage *= currentWeapon.DamagePerSecond();
+            return characterDamage;
         }
-
         #endregion
     }
 }
