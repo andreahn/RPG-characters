@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RPG_characters
+﻿namespace RPG_characters
 {
     public enum Slot
     {
@@ -35,7 +32,6 @@ namespace RPG_characters
 
         static void Main(string[] args)
         {
-            
         }
     }
 }
