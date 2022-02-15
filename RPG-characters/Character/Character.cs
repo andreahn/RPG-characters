@@ -51,7 +51,7 @@ namespace RPG_characters
         }
 
         /// <summary>
-        /// Attempts to equip item of type armour
+        /// Attempts to equip item of type armour. Throws InvalidArmorException if incompatible armour.
         /// </summary>
         /// <param name="ItemToBeEquipped">Armour object to be equipped</param>
         public string EquipItem(Armour ItemToBeEquipped)
@@ -75,7 +75,7 @@ namespace RPG_characters
         }
 
         /// <summary>
-        /// Attempts to equip item of type weapon
+        /// Attempts to equip item of type weapon. Throws InvalidWeaponException if incompatible weapon.
         /// </summary>
         /// <param name="ItemToBeEquipped">Weapon object to be equipped</param>
         public string EquipItem(Weapon ItemToBeEquipped)
