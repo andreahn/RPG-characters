@@ -15,5 +15,14 @@ namespace RPG_characters
             levelUpAttributeValues = new PrimaryAttributes() { Dexterity = 2, Intelligence = 1, Strength =  3};
             attributes = new PrimaryAttributes() { Dexterity = 2, Intelligence = 1, Strength = 5 };
         }
+        public override int TotalAttributes()
+        {
+            int totalAttributes = this.attributes.Strength;
+            foreach (var armour in equipped.Select(x => x.Value).OfType<Armour>())
+            {
+                totalAttributes += armour.ArmourAttributes.Strength;
+            }
+            return totalAttributes;
+        }
     }
 }

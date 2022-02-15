@@ -100,19 +100,10 @@ namespace RPG_characters
         }
 
         /// <summary>
-        /// Calculates the attributes total of the character and equipped armour
+        /// Calculates the sum of character's level attribute and equipped armour's attribute
         /// </summary>
         /// <returns>Sum of attribute values</returns>
-        public int TotalAttributes()
-        {
-            PrimaryAttributes totalAttributes = this.attributes;
-            foreach (var armour in equipped.Select(x => x.Value).OfType<Armour>())
-            {
-                totalAttributes += armour.ArmourAttributes;
-            }
-
-            return totalAttributes.Dexterity + totalAttributes.Intelligence + totalAttributes.Strength;
-        }
+        public abstract int TotalAttributes();
 
         /// <summary>
         /// Prints character status summary to console
