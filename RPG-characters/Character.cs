@@ -143,7 +143,10 @@ namespace RPG_characters
         public double CharacterDamage()
         {
             var currentWeapon = equipped.Values.OfType<Weapon>().SingleOrDefault();
-            double damagePerSecond = currentWeapon.DamagePerSecond() * (1 + TotalAttributes()/100);
+            double damagePerSecond = 1 + TotalAttributes()/100;
+
+            if (currentWeapon != null)
+                damagePerSecond *= currentWeapon.DamagePerSecond();
             return damagePerSecond;
         }
 
