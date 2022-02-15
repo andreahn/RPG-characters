@@ -136,7 +136,7 @@ namespace RPG_characters
             stats.AppendFormat("Strength: {0}{1}", totalStrength, Environment.NewLine);
             stats.AppendFormat("Intelligence: {0}{1}", totalIntelligence, Environment.NewLine);
             stats.AppendFormat("Dexterity: {0}{1}", totalDexterity, Environment.NewLine);
-            stats.AppendFormat("Damage per second: {0}", this.CharacterDamage());
+            stats.AppendFormat("Damage: {0}", this.CharacterDamage());
             Console.WriteLine(stats);
         }
 
