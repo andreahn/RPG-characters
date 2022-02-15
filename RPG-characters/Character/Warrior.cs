@@ -14,11 +14,6 @@ namespace RPG_characters
             compatibleWeapons = new WeaponType[] { WeaponType.WEAPON_AXE, WeaponType.WEAPON_HAMMER, WeaponType.WEAPON_SWORD };
             levelUpAttributeValues = new PrimaryAttributes() { Dexterity = 2, Intelligence = 1, Strength =  3};
             attributes = new PrimaryAttributes() { Dexterity = 2, Intelligence = 1, Strength = 5 };
-
         }
-        //public override void characterType()
-        //{
-        //    Console.WriteLine("warrior");
-        //}
     }
 }

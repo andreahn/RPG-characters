@@ -14,11 +14,6 @@ namespace RPG_characters
             compatibleWeapons = new WeaponType[] { WeaponType.WEAPON_DAGGER, WeaponType.WEAPON_SWORD };
             levelUpAttributeValues = new PrimaryAttributes() { Dexterity = 4, Intelligence = 1, Strength =  1};
             attributes = new PrimaryAttributes() { Dexterity = 6, Intelligence = 1, Strength = 2 };
-
         }
-        //public override void characterType()
-        //{
-        //    Console.WriteLine("rogue");
-        //}
     }
 }

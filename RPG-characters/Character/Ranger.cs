@@ -14,11 +14,6 @@ namespace RPG_characters
             compatibleWeapons = new WeaponType[] { WeaponType.WEAPON_BOW };
             levelUpAttributeValues = new PrimaryAttributes() { Dexterity = 5, Intelligence = 1, Strength =  1};
             attributes = new PrimaryAttributes() { Dexterity = 7, Intelligence = 1, Strength = 1 };
-
         }
-        //public override void characterType()
-        //{
-        //    Console.WriteLine("ranger");
-        //}
     }
 }
