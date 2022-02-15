@@ -22,7 +22,6 @@ namespace RPG_characters
         #endregion
 
         #region Constructors
-
         public PrimaryAttributes()
         {
             Strength = 0;
@@ -36,7 +35,6 @@ namespace RPG_characters
             Dexterity = dexterity;
             Intelligence = intelligence;
         }
-
         #endregion
 
 
@@ -46,14 +44,6 @@ namespace RPG_characters
             Attributes.Strength += AttributeUpdateValues.Strength;
             Attributes.Dexterity += AttributeUpdateValues.Dexterity;
             Attributes.Intelligence += AttributeUpdateValues.Intelligence;
-            return Attributes;
-        }
-
-        public static PrimaryAttributes operator* (PrimaryAttributes Attributes, int level)
-        {
-            Attributes.Strength *= level;
-            Attributes.Dexterity *= level;
-            Attributes.Intelligence *= level;
             return Attributes;
         }
         #endregion
