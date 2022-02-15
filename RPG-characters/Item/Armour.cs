@@ -23,9 +23,5 @@ namespace RPG_characters
             armourAttributes = attributes;
         }
         #endregion
-
-        #region Methods
-        //methods here
-        #endregion
     }
 }
