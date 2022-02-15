@@ -25,9 +25,5 @@ namespace RPG_characters
         }
 
         #endregion
-
-        #region Methods
-        //methods here
-        #endregion
     }
 }
