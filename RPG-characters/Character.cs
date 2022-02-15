@@ -54,7 +54,7 @@ namespace RPG_characters
         /// Attempts to equip item of type armour
         /// </summary>
         /// <param name="ItemToBeEquipped">Armour object to be equipped</param>
-        public void EquipItem(Armour ItemToBeEquipped)
+        public string EquipItem(Armour ItemToBeEquipped)
         {
             if (ItemToBeEquipped.ItemSlot == Slot.SLOT_WEAPON)
             {
@@ -70,6 +70,7 @@ namespace RPG_characters
             else
             {
                 equipped[ItemToBeEquipped.ItemSlot] = ItemToBeEquipped;
+                return "New armour equipped!";
             }
         }
 
@@ -77,7 +78,7 @@ namespace RPG_characters
         /// Attempts to equip item of type weapon
         /// </summary>
         /// <param name="ItemToBeEquipped">Weapon object to be equipped</param>
-        public void EquipItem(Weapon ItemToBeEquipped)
+        public string EquipItem(Weapon ItemToBeEquipped)
         {
             if (ItemToBeEquipped.ItemSlot != Slot.SLOT_WEAPON)
             {
@@ -94,6 +95,7 @@ namespace RPG_characters
             else
             {
                 equipped[ItemToBeEquipped.ItemSlot] = ItemToBeEquipped;
+                return "New weapon equipped!";
             }
         }
 
