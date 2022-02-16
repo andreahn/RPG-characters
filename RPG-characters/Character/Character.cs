@@ -103,7 +103,7 @@ namespace RPG_characters
         /// Calculates the sum of character's level attribute and equipped armour's attribute
         /// </summary>
         /// <returns>Sum of attribute values</returns>
-        public abstract int TotalAttributes();
+        public abstract double TotalAttributes();
 
         /// <summary>
         /// Prints character status summary to console
@@ -141,7 +141,7 @@ namespace RPG_characters
             // Based on Character damage = Weapon DPS * (1 + TotalPrimaryAttribute/100)
 
             var currentWeapon = equipped.Values.OfType<Weapon>().SingleOrDefault();
-            double characterDamage = 1 + TotalAttributes()/100;
+            double characterDamage = 1.0 + TotalAttributes()/100.0;
 
             if (currentWeapon != null)
                 characterDamage *= currentWeapon.DamagePerSecond();

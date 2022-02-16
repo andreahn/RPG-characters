@@ -135,7 +135,7 @@ namespace RPG_charactersTests
         {
             // Arrange
             Warrior testWarrior = new Warrior("");
-            double expected = 1 * (1 + (5 / 100));
+            double expected = 1.0 * (1.0 + (5.0 / 100.0));
 
             // Act
             double actual = testWarrior.CharacterDamage();
@@ -159,7 +159,7 @@ namespace RPG_charactersTests
             );
 
             testWarrior.EquipItem(testAxe);
-            double expected = (7 * 1.1) * (1 + (5 / 100));
+            double expected = (7.0 * 1.1) * (1.0 + (5.0 / 100.0));
 
             // Act
             double actual = testWarrior.CharacterDamage();
@@ -192,7 +192,7 @@ namespace RPG_charactersTests
 
             testWarrior.EquipItem(testAxe);
             testWarrior.EquipItem(testPlateBody);
-            double expected = (7 * 1.1) * (1 + ((5 + 1) / 100));
+            double expected = (7.0 * 1.1) * (1.0 + ((5.0 + 1.0) / 100.0));
 
             // Act
             double actual = testWarrior.CharacterDamage();

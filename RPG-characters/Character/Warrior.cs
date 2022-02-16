@@ -15,12 +15,12 @@ namespace RPG_characters
             levelUpAttributeValues = new PrimaryAttributes() { Dexterity = 2, Intelligence = 1, Strength =  3};
             attributes = new PrimaryAttributes() { Dexterity = 2, Intelligence = 1, Strength = 5 };
         }
-        public override int TotalAttributes()
+        public override double TotalAttributes()
         {
             // Each point of strength increases Warriors damage by 1%
             // Therefore, only take strength attributes from character and armour
 
-            int totalAttributes = this.attributes.Strength;
+            double totalAttributes = this.attributes.Strength;
             foreach (var armour in equipped.Select(x => x.Value).OfType<Armour>())
             {
                 totalAttributes += armour.ArmourAttributes.Strength;

@@ -13,12 +13,12 @@ namespace RPG_characters
             attributes = new PrimaryAttributes() { Dexterity = 1, Intelligence = 8, Strength = 1 };
         }
         
-        public override int TotalAttributes()
+        public override double TotalAttributes()
         {
             // Each point of intelligence increases Mages damage by 1%
             // Therefore, only take intelligence attributes from character and armour
 
-            int totalAttributes = this.attributes.Intelligence;
+            double totalAttributes = this.attributes.Intelligence;
             foreach (var armour in equipped.Select(x => x.Value).OfType<Armour>())
             {
                 totalAttributes += armour.ArmourAttributes.Intelligence;
